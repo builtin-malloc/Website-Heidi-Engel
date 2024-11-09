@@ -9,6 +9,11 @@
     --font-family-default: "Century Gothic", "Century Gothic Paneuropean", sans-serif;
     --font-family-heading: "Besley", serif;
     --font-family-fancy:   "Waterfall", serif;
+
+    --color-siam:        #5D6953;
+    --color-sage:        #9DA48E;
+    --color-celeste:     #CED2C4;
+    --color-spring-wood: #F5F0EA;
 }
 
 /*******************************************************************************
@@ -24,6 +29,9 @@ body {
  ******************************************************************************/
 
 .font-text { font-family: var(--font-family-default); font-size: 1.125rem; }
+
+.bg-light { background-color: var(--color-spring-wood); }
+.fg-dark  { color: var(--color-siam); }
 
 .flex-horizontal    { display: flex; flex-direction: row; }
 .flex-vertical      { display: flex; flex-direction: column; }
