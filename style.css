@@ -23,6 +23,8 @@ body {
  * UTILITY CLASSES
  ******************************************************************************/
 
+.font-text { font-family: var(--font-family-default); font-size: 1.125rem; }
+
 .flex-horizontal    { display: flex; flex-direction: row; }
 .flex-vertical      { display: flex; flex-direction: column; }
 .flex-space-between { display: flex; justify-content: space-between; }
