@@ -24,20 +24,27 @@ body {
     margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
 /*******************************************************************************
  * UTILITY CLASSES
  ******************************************************************************/
 
-.font-text     { font-family: var(--font-family-default); font-size: 1.125rem; font-weight: 500; }
+.font-text     { font-family: var(--font-family-default); font-size: 1.125rem; font-weight: 300; }
 .font-button   { font-family: var(--font-family-default); font-size: 1rem;     font-weight: 500; }
 .font-title    { font-family: var(--font-family-heading); font-size: 3.375rem; font-weight: 500; text-transform: uppercase; }
 .font-subtitle { font-family: var(--font-family-fancy);   font-size: 4.375rem; font-weight: 300; }
+.font-heading  { font-family: var(--font-family-heading); font-size: 2.625rem; font-weight: 500; text-transform: uppercase; }
 
 .bg-light       { background-color: var(--color-spring-wood); }
 .bg-medium-dark { background-color: var(--color-sage); }
 .bg-dark        { background-color: var(--color-siam); }
 .fg-light       { color: var(--color-spring-wood); }
 .fg-dark        { color: var(--color-siam); }
+
+.text-align-center { text-align: center; }
 
 .flex-horizontal     { display: flex; flex-direction: row; }
 .flex-vertical       { display: flex; flex-direction: column; }
