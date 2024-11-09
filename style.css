@@ -28,6 +28,14 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
 /*******************************************************************************
  * UTILITY CLASSES
  ******************************************************************************/
@@ -38,11 +46,12 @@ h1,h2,h3,h4,h5,h6 {
 .font-subtitle { font-family: var(--font-family-fancy);   font-size: 4.375rem; font-weight: 300; }
 .font-heading  { font-family: var(--font-family-heading); font-size: 2.625rem; font-weight: 500; text-transform: uppercase; }
 
-.bg-light       { background-color: var(--color-spring-wood); }
-.bg-medium-dark { background-color: var(--color-sage); }
-.bg-dark        { background-color: var(--color-siam); }
-.fg-light       { color: var(--color-spring-wood); }
-.fg-dark        { color: var(--color-siam); }
+.bg-light        { background-color: var(--color-spring-wood); }
+.bg-medium-light { background-color: var(--color-celeste); }
+.bg-medium-dark  { background-color: var(--color-sage); }
+.bg-dark         { background-color: var(--color-siam); }
+.fg-light        { color: var(--color-spring-wood); }
+.fg-dark         { color: var(--color-siam); }
 
 .text-align-center { text-align: center; }
 
@@ -100,4 +109,30 @@ h1,h2,h3,h4,h5,h6 {
     padding-left: 4rem;
     padding-right: 4rem;
     border-radius: 0.5rem;
+}
+
+/*******************************************************************************
+ * CAROUSEL
+ ******************************************************************************/
+
+.carousel__image--small {
+    width: 12rem;
+    height: 16rem;
+    border-radius: 2rem;
+}
+
+.carousel__image--big {
+    width: 16rem;
+    height: 20rem;
+    border-radius: 2rem;
+}
+
+.carousel__button {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    max-height: 8rem;
 }
