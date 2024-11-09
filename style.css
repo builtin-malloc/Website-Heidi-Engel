@@ -12,5 +12,30 @@
 }
 
 /*******************************************************************************
+ * SANE DEFAULTS
+ ******************************************************************************/
+
+body {
+    margin: 0;
+}
+
+/*******************************************************************************
  * UTILITY CLASSES
  ******************************************************************************/
+
+.flex-horizontal    { display: flex; flex-direction: row; }
+.flex-vertical      { display: flex; flex-direction: column; }
+.flex-space-between { display: flex; justify-content: space-between; }
+
+.list-style-none { list-style: none; }
+.link-style-none { text-decoration: none; }
+
+/*******************************************************************************
+ * NAVBAR
+ ******************************************************************************/
+
+.navbar__logo {
+    /* TODO: How big? */
+    max-width: 12rem;
+    max-height: 12rem;
+}
