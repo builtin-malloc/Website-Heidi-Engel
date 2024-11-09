@@ -1,1 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Waterfall&display=swap');
+@import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
+
+/*******************************************************************************
+ * VARIABLES
+ ******************************************************************************/
+
+:root {
+    --font-family-default: "Century Gothic", "Century Gothic Paneuropean", sans-serif;
+    --font-family-heading: "Besley", serif;
+    --font-family-fancy:   "Waterfall", serif;
+}
+
+/*******************************************************************************
+ * UTILITY CLASSES
+ ******************************************************************************/
