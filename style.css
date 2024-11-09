@@ -28,14 +28,24 @@ body {
  * UTILITY CLASSES
  ******************************************************************************/
 
-.font-text { font-family: var(--font-family-default); font-size: 1.125rem; }
+.font-text     { font-family: var(--font-family-default); font-size: 1.125rem; font-weight: 500; }
+.font-button   { font-family: var(--font-family-default); font-size: 1rem;     font-weight: 500; }
+.font-title    { font-family: var(--font-family-heading); font-size: 3.375rem; font-weight: 500; text-transform: uppercase; }
+.font-subtitle { font-family: var(--font-family-fancy);   font-size: 4.375rem; font-weight: 300; }
 
-.bg-light { background-color: var(--color-spring-wood); }
-.fg-dark  { color: var(--color-siam); }
+.bg-light       { background-color: var(--color-spring-wood); }
+.bg-medium-dark { background-color: var(--color-sage); }
+.bg-dark        { background-color: var(--color-siam); }
+.fg-light       { color: var(--color-spring-wood); }
+.fg-dark        { color: var(--color-siam); }
 
-.flex-horizontal    { display: flex; flex-direction: row; }
-.flex-vertical      { display: flex; flex-direction: column; }
-.flex-space-between { display: flex; justify-content: space-between; }
+.flex-horizontal     { display: flex; flex-direction: row; }
+.flex-vertical       { display: flex; flex-direction: column; }
+.flex-space-between  { display: flex; justify-content: space-between; }
+.flex-justify-center { display: flex; justify-content: center; }
+.flex-align-center   { display: flex; align-content: center; }
+
+.center-horizontal { margin-left: auto; margin-right: auto; }
 
 .list-style-none { list-style: none; }
 .link-style-none { text-decoration: none; }
@@ -45,7 +55,42 @@ body {
  ******************************************************************************/
 
 .navbar__logo {
-    /* TODO: How big? */
     max-width: 12rem;
     max-height: 12rem;
+}
+
+/*******************************************************************************
+ * LANDING SECTION
+ ******************************************************************************/
+
+.key-visual {
+    max-width: 32rem;
+    max-height: 32rem;
+    border-top-left-radius: 16rem;
+    border-top-right-radius: 16rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.key-visual-wrapper::before {
+    content: '';
+    display: inline-block;
+    width: 10rem;
+    height: 10rem;
+    background-image: url('Flower1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(-30deg);
+}
+
+/*******************************************************************************
+ * BUTTON
+ ******************************************************************************/
+
+.button {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 0.5rem;
 }
