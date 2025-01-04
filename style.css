@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Waterfall&display=swap');
+
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+
+:root {
+    --font-title:     "Besley", serif;
+    --font-subtitle:  "Waterfall", serif;
+    --font-header:    "Besley", serif;
+    --font-subheader: "Besley", serif;
+    --font-emph:      "century-gothic", sans-serif;
+    --font-text:      "century-gothic", sans-serif;
+    --font-button:    "century-gothic", sans-serif;
+
+    --color-siam:        #5D6953;
+    --color-sage:        #9DA48E;
+    --color-celeste:     #CED2C4;
+    --color-spring-wood: #F5F0EA;
+}
+
+/*******************************************************************************
+ * Elements
+ ******************************************************************************/
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 80vw;
+}
+
+p {
+    line-height: 1.2;
+}
+
+/*******************************************************************************
+ * Utility
+ ******************************************************************************/
+
+.font-title     { font-family: var(--font-title);     font-size: 2.500rem; font-weight: 500; }
+.font-subtitle  { font-family: var(--font-subtitle);  font-size: 2.500rem; font-weight: 500; }
+.font-header    { font-family: var(--font-header);    font-size: 1.750rem; font-weight: 500; }
+.font-subheader { font-family: var(--font-subheader); font-size: 1.375rem; font-weight: 600; }
+.font-emph      { font-family: var(--font-emph);      font-size: 1.000rem; font-weight: 600; }
+.font-text      { font-family: var(--font-text);      font-size: 0.875rem; font-weight: 400; }
+.font-button    { font-family: var(--font-button);    font-size: 1.000rem; font-weight: 500; }
+
+.font-size-1rem { font-size: 1rem; }
+.font-bold      { font-weight: bold; }
+
+.fg-dark    {            color: var(--color-siam); }
+.fg-medium  {            color: var(--color-sage); }
+.fg-light   {            color: var(--color-spring-wood); }
+.bg-darkest { background-color: var(--color-siam); }
+.bg-darker  { background-color: var(--color-sage); }
+.bg-dark    { background-color: var(--color-celeste); }
+.bg-light   { background-color: var(--color-spring-wood); }
+
+.text-uppercase   { text-transform: uppercase; }
+.text-undecorated { text-decoration: none; }
+.text-break-word  { word-wrap: break-word; }
+.text-center      { text-align: center; }
+
+.flex-vertical          { display: flex; flex-direction: column; }
+.flex-horizontal        { display: flex; flex-direction: row; }
+.flex-center-vertical   { display: flex; flex-direction: column; align-items: center; }
+.flex-center-horizontal { display: flex; flex-direction: row;    align-items: center;}
+.flex-space-between     { display: flex; justify-content: space-between; }
+
+.list-undecorated { list-style: none; }
+
+.padding-top-1rem        { padding-top:    1rem; }
+.padding-top-2rem        { padding-top:    2rem; }
+.padding-top-4rem        { padding-top:    4rem; }
+.padding-bottom-1rem     { padding-bottom: 1rem; }
+.padding-bottom-2rem     { padding-bottom: 2rem; }
+.padding-left-right-1rem { padding-left:   1rem; padding-right: 1rem; }
+.padding-left-right-2rem { padding-left:   2rem; padding-right: 2rem; }
+.padding-left-right-3rem { padding-left:   3rem; padding-right: 3rem; }
+.padding-left-right-4rem { padding-left:   4rem; padding-right: 4rem; }
+
+.margin-left-1rem       { margin-left:   1rem; }
+.margin-left-4rem       { margin-left:   4rem; }
+.margin-right-1rem      { margin-right:  1rem; }
+.margin-right-2rem      { margin-right:  2rem; }
+.margin-right-4rem      { margin-right:  4rem; }
+.margin-top-1rem        { margin-top:    1rem; }
+.margin-top-2rem        { margin-top:    2rem; }
+.margin-top-4rem        { margin-top:    4rem; }
+.margin-bottom-1rem     { margin-bottom: 1rem; }
+.margin-bottom-2rem     { margin-bottom: 2rem; }
+.margin-left-right-1rem { margin-left:   1rem; margin-right: 1rem; }
+.margin-left-right-2rem { margin-left:   2rem; margin-right: 2rem; }
+.margin-left-right-4rem { margin-left:   4rem; margin-right: 4rem;}
+
+.padding-button { padding: 0.5rem 4rem; border-radius: 1rem; }
+.border-button  { border: 2px solid var(--color-siam); border-radius: 1rem; }
+
+.width-100-percent  { width:  100%; }
+.height-100-percent { height: 100%; }
+
+.position-relative { position: relative; }
+
+.center-self-horizontal { margin-left: auto; margin-right: auto; }
+
+/*******************************************************************************
+ * Widgets
+ ******************************************************************************/
+
+/* ********** Logo ********** */
+
+.logo {
+    width:		20rem;
+    margin-top:		-2rem;
+    margin-bottom:	 1rem;
+    margin-left:	-4rem;
+    margin-right:	-1rem;
+}
+
+/* ********** Burger Menu ********** */
+
+.burger-menu__button {
+    display:		flex;
+    position:		absolute;
+    flex-direction:	column;
+    justify-content:	space-between;
+    width:		3rem;
+    height:		1.5rem;
+    top:		25%;
+    right:		1rem;
+}
+
+.burger-menu__button__line {
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-siam);
+}
+
+/* ********** Key Visual ********** */
+
+.key-visual-image {
+    z-index:			1;
+    position:			relative;
+    width:			14rem;
+    border-top-left-radius:	7rem;
+    border-top-right-radius:	7rem;
+    border-bottom-left-radius:	1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.key-visual-image__wrapper {
+    position: relative;
+}
+
+.key-visual-image__wrapper::before {
+    z-index:		0;
+    content:		'';
+    background:		url("./flower1.png");
+    background-size:	cover;
+    display:		inline-block;
+    position:		absolute;
+    width:		8rem;
+    height:		8rem;
+    top:		8rem;
+    left:		-5rem;
+    transform:		rotate(-30deg);
+}
+
+/* ********** Scroll Buttons ********** */
+
+.scroll-button {
+    width:		0.75rem;
+    height:		0.75rem;
+    margin-left:        0.35rem;
+    margin-right:       0.35rem;
+    border-radius:	0.4rem;
+    border:		none;
+}
+
+.scroll-button--active {
+    width:	2rem;
+    background: var(--color-siam) !important;
+}
+
+
+/* ********** Gallery ********** */
+
+.gallery-image {
+    width: 12rem;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.gallery-button {
+    position:           relative;
+    height:		4rem;
+    width:		2rem;
+    border-radius:	0.75rem;
+    border:		none;
+}
+
+.gallery-button::after {
+    content:		'';
+    position:		absolute;
+    width:		1rem;
+    height:		1rem;
+    top:                1.5rem;
+    transform:		rotate(-45deg);
+}
+
+.gallery-button--prev::after {
+    right:              0.25rem;
+    border-left:	3px solid var(--color-spring-wood);
+    border-top:		3px solid var(--color-spring-wood);
+}
+
+.gallery-button--next::after {
+    left:               0.25rem;
+    border-right:	3px solid var(--color-spring-wood);
+    border-bottom:	3px solid var(--color-spring-wood);
+}
+
+/* ********** Package ********** */
+
+.package {
+    width: 16rem;
+}
+
+@media screen and (min-width: 400px) {
+    .package { width: 18rem; }
+}
+
+.package-image {
+    width:			100%;
+    aspect-ratio:		1 / 1;
+    object-fit:			cover;
+    border-top-left-radius:	50%;
+    border-top-right-radius:	50%;
+}
+
+.package-content {
+    border-bottom-left-radius:	1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* ********** Contact ********** */
+
+.contact-image {
+    width:			18rem;
+    aspect-ratio:               3 / 4;
+    object-fit:                 cover;
+    border-top-left-radius:	9rem;
+    border-top-right-radius:	9rem;
+    border-bottom-left-radius:	1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+
+.contact-image__wrapper {
+    position: relative;
+}
+
+.contact-image__wrapper::after {
+    content:		'';
+    background:		url("./flower2.png");
+    background-size:	cover;
+    display:		inline-block;
+    position:		absolute;
+    width:		8rem;
+    height:		8rem;
+    top:		12rem;
+    right:		-4rem;
+    transform:		rotateY(180deg) rotateZ(-30deg);
+}
+
+.contact-icon {
+    margin-right: 2rem;
+}
+
+.contact-icon::before {
+    content:		'';
+    display:		inline-block;
+    width:		1rem;
+    height:		1rem;
+    border:		2px solid var(--color-siam);
+    border-radius:	2px;
+}
+
+.contact-input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+    border: 3px solid var(--color-siam);
+}
+
+/* ********** Copyright ********** */
+
+.copyright {
+    border-bottom: 2px solid var(--color-celeste);
+}

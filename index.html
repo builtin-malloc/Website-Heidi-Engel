@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="de">
+  
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Heidi Engel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="reset.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+    <link href="style.css" rel="stylesheet"/>
+    <script src="script.js"></script>
+  </head>
+  
+  <body onload="populateGalleryElements()">
+
+    <!-- Header -->
+
+    <header class="bg-light padding-top-2rem">
+      <div class="flex-horizontal flex-space-between margin-left-right-2rem
+		  position-relative">
+	<img class="logo" alt="Logo" src="logo.png"/>
+	<div class="burger-menu__button">
+	  <span class="burger-menu__button__line"></span>
+	  <span class="burger-menu__button__line"></span>
+	  <span class="burger-menu__button__line"></span>
+	</div>
+      </div>
+    </header>
+
+    <main class="bg-light">
+
+      <!-- Landing Section -->
+
+      <section class="bg-light flex-center-vertical padding-left-right-2rem">
+
+	<div class="key-visual-image__wrapper">
+	  <img class="key-visual-image"
+	       alt="Key Visual" src="key-visual.png"/>
+	</div>
+	
+	<div class="bg-darker flex-center-vertical">
+	  <h1 class="font-title text-uppercase text-break-word text-center fg-dark
+		     margin-top-2rem">
+	    Braut-Frisur
+	  </h1>
+	  <h2 class="font-subtitle text-break-word text-center fg-light">
+	    f&uuml;r deinen gro&szlig;en Tag
+	  </h2>
+	  <a class="font-button text-undecorated fg-light bg-darkest
+		    margin-top-2rem padding-button"
+	     href="">
+	    zur Galerie
+	  </a>
+	</div>
+
+	<div class="bg-light flex-center-vertical">
+	  <h3 class="font-header text-uppercase text-break-word text-center
+		     fg-dark padding-top-4rem padding-bottom-2rem">
+	    Herzlich Willkommen!
+	  </h3>
+	  <p class="font-text fg-dark text-center margin-left-right-2rem">
+	    Ich bin Heidi und habe mich auf wunderschöne Brautfrisuren
+	    spezialisiert.  Ob elegante Hochsteckfrisuren, romantische
+	    Locken oder halb offene Styles – ich sorge dafür, dass
+	    deine Frisur perfekt zu deinem großen Tag passt. In meiner
+	    Galerie findest du einige Inspirationen und Beispiele
+	    meiner Arbeit. Schau doch gerne vorbei und melde dich,
+	    wenn du Interesse hast.  Gemeinsam kreieren wir deine
+	    Traumfrisur!
+	  </p>
+	</div>
+	
+      </section>
+
+      <!-- Gallery Section -->
+
+      <section class="bg-dark margin-top-4rem
+		      padding-left-right-2rem padding-top-1rem padding-bottom-1rem">
+
+	<h3 class="font-header text-uppercase text-break-word text-center
+		   fg-dark margin-top-2rem margin-bottom-2rem">
+	  Meine Frisuren
+	</h3>
+
+	<div class="flex-center-vertical">
+	  <div class="flex-center-horizontal">
+	    <button class="gallery-button gallery-button--prev |
+			   bg-darkest margin-right-1rem"
+		    onclick="gotoPrevGalleryImage()"></button>
+	    <img id="gallery-main-image"
+		 class="gallery-image"
+		 alt="Gallery" src="gallery1.jpg"/>
+	    <button class="gallery-button gallery-button--next |
+			   bg-darkest margin-left-1rem"
+		    onclick="gotoNextGalleryImage()"></button>
+	  </div>
+	  <div class="flex-horizontal margin-top-2rem">
+	    <button class="scroll-button scroll-button--active | bg-light"
+		    onclick="gotoGalleryImage(0)"
+		    id="gallery-scroll--0">
+	    </button>
+	    <button class="scroll-button | bg-light"
+		    onclick="gotoGalleryImage(1)"
+		    id="gallery-scroll--1">
+	    </button>
+	    <button class="scroll-button | bg-light"
+		    onclick="gotoGalleryImage(2)"
+		    id="gallery-scroll--2">
+	    </button>
+	  </div>
+	</div>
+
+      </section>
+
+      <!-- Offers Section -->
+
+      <section class="bg-light flex-center-vertical padding-left-right-2rem">
+
+	<h3 class="font-header text-uppercase text-break-word text-center
+		   fg-dark margin-top-2rem margin-bottom-2rem">
+	  Was ich anbiete
+	</h3>
+
+	<div class="package | bg-light flex-center-vertical" id="package--1">
+	  <img class="package-image" alt="Package" src="package1.jpg"/>
+	  <div class="package-content | bg-dark flex-center-vertical padding-bottom-1rem">
+	    <h4 class="font-subheader fg-dark text-break-word text-center
+		       padding-top-1rem padding-bottom-1rem">
+	      Fairy-Paket 2
+	    </h4>
+	    <h5 class="font-emph fg-dark text-break-word text-center
+		       padding-bottom-1rem">
+	      Hochzeitsfrisur inkl. Probetermin
+	    </h5>
+	    <p class="font-text fg-dark
+		      padding-left-right-1rem padding-bottom-1rem">
+	      Erhalte die perfekte Frisur für deinen großen Tag mit
+	      einem individuellen Probetermin, um deinen Look genau
+	      auf dich abzustimmen. Der Probetermin bietet dir die
+	      Möglichkeit, verschiedene Stile auszuprobieren und
+	      sicherzustellen, dass du dich rundum wohlfühlst.
+	    </p>
+	    <p class="font-text fg-dark width-100-percent
+		      padding-left-right-1rem">
+	      Leistungen:
+	    </p>
+	    <ul class="padding-bottom-1rem">
+	      <li class="font-text fg-dark">
+		Individueller Probetermin
+	      </li>
+	      <li class="font-text fg-dark">
+		Hochzeitsfrisur am Tag der Feier
+	      </li>
+	      <li class="font-text fg-dark">
+		Persönliche Beratung und Styling-Tipps
+	      </li>
+	    </ul>
+
+	    <button class="font-emph font-size-1rem
+			   fg-dark bg-dark border-button
+			   padding-left-right-4rem">
+	      180&euro;
+	    </button>
+	  </div>
+	
+	  <div class="flex-horizontal margin-top-1rem">
+	    <button class="scroll-button | bg-dark">
+	    </button>
+	    <button class="scroll-button scroll-button--active | bg-dark">
+	    </button>
+	    <button class="scroll-button | bg-dark">
+	    </button>
+	  </div>
+	</div>
+
+	<h4 class="font-emph fg-dark text-center
+		   margin-top-4rem margin-bottom-1rem">
+	  Deine perfekte Hochzeitsfrisur - flexibel und unkompliziert
+	</h4>
+	<p class="font-text fg-dark text-center
+		  margin-left-right-2rem">
+	  Gerne komme ich an deinem großen Tag flexibel zu dir, um
+	  dich direkt vor Ort für deinen besonderen Anlass zu stylen.
+	  Für Anfahrten berechne ich
+	  <span class="font-bold">70 Cent pro Kilometer</span>.
+	</p>
+	
+      </section>
+
+      <!-- Contact Section -->
+
+      <section class="flex-center-vertical">
+
+	<div class="contact-image__wrapper">
+	  <img class="contact-image | margin-top-2rem"
+	       alt="Contact" src="contact.jpg"/>
+	</div>
+
+	<div class="bg-dark flex-center-vertical
+		    padding-left-right-2rem">
+	  <h3 class="font-header text-uppercase fg-dark
+		     padding-top-2rem">
+	    Du hast Interesse?
+	  </h3>
+
+	  <p class="font-text text-center fg-dark
+		    margin-top-2rem margin-left-right-2rem">
+	    Du wünschst dir eine wunderschöne Frisur für deine Hochzeit?
+	    Dann melde dich gerne per E-Mail oder über das
+	    Kontaktformular bei mir. Ich freue mich darauf, von dir zu
+	    hören und melde mich schnellstmöglich bei dir!
+	  </p>
+
+	  <ul class="list-undecorated margin-top-2rem margin-bottom-2rem">
+	    <li class="flex-center-horizontal">
+	      <span class="contact-icon"></span>
+	      <a class="font-emph text-undecorated fg-dark" href="">
+		info@fairy-bride.de
+	      </a>
+	    </li>
+	    <li class="flex-center-horizontal">
+	      <span class="contact-icon"></span>
+	      <a class="font-emph text-undecorated fg-dark" href="">
+		G&ouml;ttelborn, Saarland
+	      </a>
+	    </li>
+	    <li class="flex-center-horizontal">
+	      <span class="contact-icon"></span>
+	      <a class="font-emph text-undecorated fg-dark" href="">
+		fairy-bride hairstyles
+	      </a>
+	    </li>
+	  </ul>
+
+	  <form class="flex-center-vertical margin-top-2rem margin-bottom-2rem">
+	    <input class="contact-input | font-text fg-dark bg-dark"
+		   name="Name" type="text" value="" placeholder="Name*"
+		   autocomplete="name" required/>
+	    <input class="contact-input | font-text fg-dark bg-dark"
+		   name="Email" type="text" value="" placeholder="E-Mail Adresse*"
+		   autocomplete="email" required/>
+	    <input class="contact-input | font-text fg-dark bg-dark"
+		   name="Wohnort" type="text" value="" placeholder="Wohnort"
+		   autocomplete="address-level2" />
+	    <textarea class="contact-input | font-text fg-dark bg-dark"
+		      cols="30" id="" name="" rows="10"
+		      name="Nachricht" required>
+Liebe Heidi,
+ich interessiere mich für das Paket X und möchte gern einen Termin bei dir vereinbaren.
+Ich freue mich auf deine Rückmeldung!
+
+Herzliche Grüße</textarea>
+	    <p id="cost-estimate" class="font-text fg-dark">
+	    </p>
+	    <div class="flex-center-horizontal margin-bottom-2rem">
+	      <input class="bg-dark margin-right-1rem"
+		     name="privacy" type="radio" value="" id="privacy"
+		     required/>
+	      <label class="font-text fg-dark" for="privacy">
+		Ich habe die Datenschutzerklärung zur Kenntnis
+		genommen.*
+	      </label>
+	    </div>
+	    <input class="font-emph bg-darkest fg-light padding-button border-button"
+		   name="" type="submit" value="Absenden"/>
+	  </form>
+
+	</div>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="bg-light
+		   padding-bottom-2rem padding-top-4rem padding-left-right-2rem">
+
+      <div class="copyright | font-text fg-medium
+		              padding-bottom-2rem padding-left-right-2rem">
+	©2024 Heidi Engel
+      </div>
+
+      <ul class="flex-horizontal list-undecorated padding-top-1rem">
+	<li>
+	  <a class="text-undecorated font-text fg-dark margin-right-2rem"
+	     href="imprint.html">
+	    Impressum
+	  </a>
+	</li>
+	<li>
+	  <a class="text-undecorated font-text fg-dark margin-right-2rem"
+	     href="privacy.html">
+	    Datenschutz
+	  </a>
+	</li>
+      </ul>
+      
+    </footer>
+    
+  </body>
+  
+</html>
