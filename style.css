@@ -217,6 +217,14 @@ p {
 
 /* ********** Gallery ********** */
 
+.gallery-item--inactive {
+    display: none;
+}
+
+.gallery-item--active {
+    display: initial;
+}
+
 .gallery-image {
     width: 12rem;
     height: 18rem;

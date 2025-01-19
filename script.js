@@ -3,15 +3,17 @@
 // =============================================================================
 
 let burgerMenu = undefined;
+let gallery    = undefined;
+let offers     = undefined;
 
 // =============================================================================
 // == CALLBACKS ================================================================
 // =============================================================================
 
 function onDocumentLoad() {
-    populateGalleryElements();
-
     burgerMenu = new BurgerMenu();
+    gallery    = new Gallery("gallery");
+    offers     = new Gallery("offers-section");
 }
 
 // =============================================================================
@@ -55,51 +57,71 @@ class BurgerMenu {
 // == GALLERY ==================================================================
 // =============================================================================
 
-const NUM_GALLERY_IMAGES = 3;
-let   curGalleryIndex    = 0;
-
-let   galleryMainImage     = undefined;
-let   galleryScrollButtons = {};
-
-function populateGalleryElements() {
-    for (let i = 0; i < NUM_GALLERY_IMAGES; ++i) {
-	let elem = document.getElementById(`gallery-scroll--${i}`);
-	if (!elem) console.warn(`Can not find gallery scroll button #${i}`);
-	galleryScrollButtons[i] = elem;
+class Gallery {
+    constructor(id) {
+	this.containerElem     = document.getElementById(id);
+	this.itemElems         = this.containerElem.getElementsByClassName("gallery-item");
+	this.numItemElems      = this.itemElems.length;
+	this.scrollButtonElems = this.containerElem.getElementsByClassName("scroll-button");
+	this.numScrollElems    = this.scrollButtonElems.length;
+	this.activeItem        = this.findActiveItem();
+    
+	console.debug(`Gallery "${id}" has ${this.numItemElems} items`);
+	console.assert(this.numItemElems === this.numScrollElems);
+	console.debug(`Initial active item: ${this.activeItem}`);
     }
 
-    galleryMainImage = document.getElementById(`gallery-main-image`);
-    if (!galleryMainImage) console.warn(`Cannot find the gallery main image`);
-}
+    findActiveItem() {
+	for (let i = 0; i < this.numItemElems; ++i) {
+	    let item = this.itemElems[i];
+	    if (item.classList.contains("gallery-item--active")) {
+		return i;
+	    }
+	}
 
-function gotoNextGalleryImage() { gotoGalleryImageRelative(+1); }
-function gotoPrevGalleryImage() { gotoGalleryImageRelative(-1); }
+	return undefined;
+    }
 
-function gotoGalleryImageRelative(offset) {
-    gotoGalleryImage(
-	advanceIndexInBounds(curGalleryIndex, offset, 0, NUM_GALLERY_IMAGES - 1));
-}
+    gotoNextElem() { this.gotoElemRelative(+1); } 
+    gotoPrevElem() { this.gotoElemRelative(-1); } 
 
-function gotoGalleryImage(index) {
-    console.assert(index >= 0);
-    console.assert(index < NUM_GALLERY_IMAGES);
-    console.assert(galleryMainImage != undefined);
-    
-    curGalleryIndex      = index;
-    galleryMainImage.src = `gallery${curGalleryIndex + 1}.jpg`;
+    gotoElemRelative(offset) {
+	const newIndex = this.activeItem + offset;
 
-    for (let i = 0; i < NUM_GALLERY_IMAGES; ++i) {
-	let elem = galleryScrollButtons[i];
-	if (!elem) continue;
+	if (newIndex < 0) return;
+	if (newIndex >= this.numItemElems) return;
 
-	if (i === curGalleryIndex) {
-	    elem.classList.add(`scroll-button--active`);
-	} else {
-	    elem.classList.remove(`scroll-button--active`);
+	this.gotoElem(newIndex);
+    }
+
+    gotoElem(index) {
+	console.assert(index >= 0);
+	console.assert(index < this.numItemElems);
+
+	this.activeItem = index;
+	this.updateElems();
+
+	console.debug(`New index: ${this.activeItem}`);
+    }
+
+    updateElems() {
+	for (let i = 0; i < this.numItemElems; ++i) {
+	    let item   = this.itemElems[i];
+	    let button = this.scrollButtonElems[i];
+
+	    if (i === this.activeItem) {
+		item.classList.add("gallery-item--active");
+		item.classList.remove("gallery-item--inactive");
+		button.classList.add("scroll-button--active");
+		button.classList.remove("scroll-button--inactive");
+	    } else {
+		item.classList.remove("gallery-item--active");
+		item.classList.add("gallery-item--inactive");
+		button.classList.remove("scroll-button--active");
+		button.classList.add("scroll-button--inactive");
+	    }
 	}
     }
-    
-    console.log(`Goto Gallery Image ${curGalleryIndex}`);
 }
 
 

@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
     <link href="style.css" rel="stylesheet"/>
     
-    <link href="gallery1.jpg" rel="preload" as="image"/>
-    <link href="gallery2.jpg" rel="preload" as="image"/>
-    <link href="gallery3.jpg" rel="preload" as="image"/>
-    
     <script src="script.js"></script>
   </head>
   
@@ -146,30 +142,32 @@
 	  Meine Frisuren
 	</h3>
 
-	<div class="flex-center-vertical">
+	<div id="gallery" class="flex-center-vertical">
 	  <div class="flex-center-horizontal">
 	    <button class="gallery-button gallery-button--prev |
 			   bg-darkest margin-right-1rem"
-		    onclick="gotoPrevGalleryImage()"></button>
-	    <img id="gallery-main-image"
-		 class="gallery-image"
-		 alt="Gallery" src="gallery1.jpg"/>
+		    onclick="gallery.gotoPrevElem()"></button>
+
+	    <img class="gallery-image gallery-item gallery-item--active"
+		 alt="Gallery Image 1" src="gallery1.jpg"/>
+	    <img class="gallery-image gallery-item gallery-item--inactive"
+		 alt="Gallery Image 2" src="gallery2.jpg"/>
+	    <img class="gallery-image gallery-item gallery-item--inactive"
+		 alt="Gallery Image 3" src="gallery3.jpg"/>
+
 	    <button class="gallery-button gallery-button--next |
 			   bg-darkest margin-left-1rem"
-		    onclick="gotoNextGalleryImage()"></button>
+		    onclick="gallery.gotoNextElem()"></button>
 	  </div>
 	  <div class="flex-horizontal margin-top-2rem">
 	    <button class="scroll-button scroll-button--active | bg-light"
-		    onclick="gotoGalleryImage(0)"
-		    id="gallery-scroll--0">
+		    onclick="gallery.gotoElem(0)">
 	    </button>
 	    <button class="scroll-button | bg-light"
-		    onclick="gotoGalleryImage(1)"
-		    id="gallery-scroll--1">
+		    onclick="gallery.gotoElem(1)">
 	    </button>
 	    <button class="scroll-button | bg-light"
-		    onclick="gotoGalleryImage(2)"
-		    id="gallery-scroll--2">
+		    onclick="gallery.gotoElem(2)">
 	    </button>
 	  </div>
 	</div>
@@ -186,8 +184,55 @@
 	  Was ich anbiete
 	</h3>
 
-	<div class="package | bg-light flex-center-vertical" id="package--1">
+	<div class="package gallery-item gallery-item--inactive
+		    | bg-light flex-center-vertical">
 	  <img class="package-image" alt="Package" src="package1.jpg"/>
+	  <div class="package-content | bg-dark flex-center-vertical padding-bottom-1rem">
+	    <h4 class="font-subheader fg-dark text-break-word text-center
+		       padding-top-1rem padding-bottom-1rem">
+	      Fairy-Paket 1
+	    </h4>
+	    <h5 class="font-emph fg-dark text-break-word text-center
+		       padding-bottom-1rem">
+	      Hochzeitsfrisur ohne Probetermin
+	    </h5>
+	    <p class="font-text fg-dark
+		      padding-left-right-1rem padding-bottom-1rem"> Ob
+	      für deine Hochzeit, den Abiball oder einen anderen
+	      besonderen Anlass – ich bin da, um dir genau die Frisur
+	      zu zaubern, die du dir wünschst.  Egal, ob du schon eine
+	      genaue Vorstellung hast oder es lieber einfach und
+	      unkompliziert magst: Du kannst dich auf einen
+	      entspannten Styling Service direkt am Tag deines Events
+	      verlassen – ohne vorherigen Probetermin.
+	    </p>
+	    <p class="font-text fg-dark width-100-percent
+		      padding-left-right-1rem">
+	      Leistungen:
+	    </p>
+	    <ul class="padding-bottom-1rem">
+	      <li class="font-text fg-dark">
+		Frisur am Tag der Feier
+	      </li>
+	      <li class="font-text fg-dark">
+		Schnelle und unkomplizierte Umsetzung
+	      </li>
+	      <li class="font-text fg-dark">
+		Persönliche Beratung und Styling Tipps
+	      </li>
+	    </ul>
+
+	    <button class="font-emph font-size-1rem
+			   fg-dark bg-dark border-button
+			   padding-left-right-4rem">
+	      80&euro;
+	    </button>
+	  </div>
+	</div>
+
+	<div class="package gallery-item gallery-item--active
+		    | bg-light flex-center-vertical">
+	  <img class="package-image" alt="Package" src="package2.jpg"/>
 	  <div class="package-content | bg-dark flex-center-vertical padding-bottom-1rem">
 	    <h4 class="font-subheader fg-dark text-break-word text-center
 		       padding-top-1rem padding-bottom-1rem">
@@ -228,14 +273,15 @@
 	    </button>
 	  </div>
 	
-	  <div class="flex-horizontal margin-top-1rem">
-	    <button class="scroll-button | bg-dark">
-	    </button>
-	    <button class="scroll-button scroll-button--active | bg-dark">
-	    </button>
-	    <button class="scroll-button | bg-dark">
-	    </button>
-	  </div>
+	</div>
+
+	<div class="flex-horizontal margin-top-1rem">
+	  <button class="scroll-button scroll-button--inactive | bg-dark"
+		  onclick="offers.gotoElem(0)">
+	  </button>
+	  <button class="scroll-button scroll-button--active | bg-dark"
+		  onclick="offers.gotoElem(1)">
+	  </button>
 	</div>
 
 	<h4 class="font-emph fg-dark text-center
