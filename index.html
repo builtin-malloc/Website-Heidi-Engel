@@ -17,7 +17,7 @@
     <script src="script.js"></script>
   </head>
   
-  <body onload="populateGalleryElements()">
+  <body onload="onDocumentLoad()">
 
     <!-- Header -->
 
@@ -25,10 +25,67 @@
       <div class="flex-horizontal flex-space-between margin-left-right-2rem
 		  position-relative">
 	<img class="logo" alt="Logo" src="logo.png"/>
-	<div class="burger-menu__button">
-	  <span class="burger-menu__button__line"></span>
-	  <span class="burger-menu__button__line"></span>
-	  <span class="burger-menu__button__line"></span>
+	<div class="burger-menu__button" onclick="burgerMenu.toggleVisible()">
+	  <span class="burger-menu__button__line | bg-darkest"></span>
+	  <span class="burger-menu__button__line | bg-darkest"></span>
+	  <span class="burger-menu__button__line | bg-darkest"></span>
+	</div>
+      </div>
+
+      <div id="burger-menu__container"
+	   class="burger-menu__container burger-menu--closed">
+	<div class="burger-menu | bg-darkest">
+	  <div class="position-relative margin-top-2rem margin-left-right-2rem">
+	    <div class="burger-menu__button" onclick="burgerMenu.toggleVisible()">
+	      <span class="burger-menu__button__line | bg-light"></span>
+	      <span class="burger-menu__button__line | bg-light"></span>
+	      <span class="burger-menu__button__line | bg-light"></span>
+	    </div>
+
+	    <div class="burger-menu__separator | padding-top-4rem margin-bottom-1rem"></div>
+
+	    <ul class="list-undecorated padding-left-0rem">
+	      <li>
+		<a class="fg-light font-button text-undecorated"
+		   href="index.html#gallery-section"
+		   onclick="burgerMenu.toggleVisible()">
+		  Meine Frisuren
+		</a>
+	      </li>
+	      <li>
+		<a class="fg-light font-button text-undecorated"
+		   href="index.html#offers-section"
+		   onclick="burgerMenu.toggleVisible()">
+		  Was ich anbiete
+		</a>
+	      </li>
+	      <li>
+		<a class="fg-light font-button text-undecorated"
+		   href="index.html#contact-section"
+		   onclick="burgerMenu.toggleVisible()">
+		  Du hast interesse?
+		</a>
+	      </li>
+	    </ul>
+
+	    <div class="burger-menu__separator | padding-top-1rem margin-bottom-1rem"></div>
+
+	    <ul class="list-undecorated padding-left-0rem">
+	      <li>
+		<a class="fg-light font-button text-undecorated"
+		   href="">
+		  Impressum
+		</a>
+	      </li>
+	      <li>
+		<a class="fg-light font-button text-undecorated"
+		   href="">
+		  Datenschutz
+		</a>
+	      </li>
+	    </ul>
+
+	  </div>
 	</div>
       </div>
     </header>
@@ -80,7 +137,8 @@
 
       <!-- Gallery Section -->
 
-      <section class="bg-dark margin-top-4rem
+      <section id="gallery-section"
+	       class="bg-dark margin-top-4rem
 		      padding-left-right-2rem padding-top-1rem padding-bottom-1rem">
 
 	<h3 class="font-header text-uppercase text-break-word text-center
@@ -120,7 +178,8 @@
 
       <!-- Offers Section -->
 
-      <section class="bg-light flex-center-vertical padding-left-right-2rem">
+      <section id="offers-section"
+	       class="bg-light flex-center-vertical padding-left-right-2rem">
 
 	<h3 class="font-header text-uppercase text-break-word text-center
 		   fg-dark margin-top-2rem margin-bottom-2rem">
@@ -195,7 +254,8 @@
 
       <!-- Contact Section -->
 
-      <section class="flex-center-vertical">
+      <section id="contact-section"
+	       class="flex-center-vertical">
 
 	<div class="contact-image__wrapper">
 	  <img class="contact-image | margin-top-2rem"
@@ -260,7 +320,7 @@ Herzliche Grüße</textarea>
 	    </p>
 	    <div class="flex-center-horizontal margin-bottom-2rem">
 	      <input class="bg-dark margin-right-1rem"
-		     name="privacy" type="radio" value="" id="privacy"
+		     name="privacy" type="checkbox" value="" id="privacy"
 		     required/>
 	      <label class="font-text fg-dark" for="privacy">
 		Ich habe die Datenschutzerklärung zur Kenntnis

@@ -1,4 +1,20 @@
 // =============================================================================
+// == GLOBAL STATE =============================================================
+// =============================================================================
+
+let burgerMenu = undefined;
+
+// =============================================================================
+// == CALLBACKS ================================================================
+// =============================================================================
+
+function onDocumentLoad() {
+    populateGalleryElements();
+
+    burgerMenu = new BurgerMenu();
+}
+
+// =============================================================================
 // == HELPERS ==================================================================
 // =============================================================================
 
@@ -9,6 +25,30 @@ function advanceIndexInBounds(curIndex, offset, minIndex, maxIndex) {
     if (newIndex < minIndex) return maxIndex;
 
     return newIndex;
+}
+
+// =============================================================================
+// == BURGER MENU ==============================================================
+// =============================================================================
+
+class BurgerMenu {
+    constructor() {
+	this.isVisible = false;
+	this.containerElement = document.getElementById("burger-menu__container");
+    }
+
+    toggleVisible() {
+	this.isVisible = !this.isVisible;
+	console.log(`Burger Menu is ${this.isVisible ? "opened" : "closed"}`);
+
+	if (this.isVisible) {
+	    this.containerElement.classList.add("burger-menu--open");
+	    this.containerElement.classList.remove("burger-menu--closed");
+	} else {
+	    this.containerElement.classList.remove("burger-menu--open");
+	    this.containerElement.classList.add("burger-menu--closed");
+	}
+    }
 }
 
 // =============================================================================
