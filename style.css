@@ -110,6 +110,34 @@ p {
  * Widgets
  ******************************************************************************/
 
+/* ********** Organics ********** */
+
+.title-background { z-index: 0; }
+.title-background::before {
+    z-index:            -1;
+    content:		'';
+    position:		absolute;
+    width:		200%;
+    height:		150%;
+    border-radius:	40% 60% 60% 40% / 70% 30% 70% 30%;
+    background:         var(--color-sage);
+    bottom:             -25%;
+}
+
+/*
+.gallery-background { z-index: 0; }
+.gallery-background::before {
+    z-index:            -1;
+    content:		'';
+    position:		absolute;
+    width:		200%;
+    height:		150%;
+    border-radius:	40% 60% 60% 40% / 70% 30% 70% 30%;
+    background:         var(--color-sage);
+    bottom:             -25%;
+}
+*/
+
 /* ********** Logo ********** */
 
 .logo {
